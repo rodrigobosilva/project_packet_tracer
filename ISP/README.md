@@ -30,10 +30,10 @@ exit
 
 | Box  | IP |
 | ------------- | ------------- |
-| IPv4 Address | 8.8.8.8 |
-| Subnet Mask | 255.255.255.0 |
-| Default Gateway | 8.8.8.1 |
-| DNS Server | 8.8.8.8 |
+| IPv4 Address | `8.8.8.8` |
+| Subnet Mask | `255.255.255.0` |
+| Default Gateway | `8.8.8.1` |
+| DNS Server | `8.8.8.8` |
 
 ### PC0
 * IP Configuration
@@ -41,7 +41,7 @@ exit
 
 | Box  | IP |
 | ------------- | ------------- |
-| IPv4 Address | 4.4.4.4 |
-| Subnet Mask | 255.255.255.0 |
-| Default Gateway | 4.4.4.1 |
-| DNS Server | 8.8.8.8 |
+| IPv4 Address | `4.4.4.4` |
+| Subnet Mask | `255.255.255.0` |
+| Default Gateway | `4.4.4.1` |
+| DNS Server | `8.8.8.8` |
