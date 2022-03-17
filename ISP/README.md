@@ -23,6 +23,9 @@ no shutdown
 ip address 4.4.4.1 255.255.255.0
 exit
 ```
+```
+do write
+```
 
 ### Server0
 * IP Configuration
