@@ -563,3 +563,8 @@ ephone-dn 9
 number 132
 exit
 ```
+```
+dial-peer voice 1 voip
+destination-pattern 2..
+session target ipv4:192.168.17.10
+```
