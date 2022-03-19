@@ -313,6 +313,10 @@ switchport mode access
 switchport access vlan 30
 exit
 ```
+```
+spanning-tree vlan 20 root secundary
+spanning-tree vlan 30 root primary
+```
 ### SWPDL1
 ```
 int range f0/1-3
@@ -330,6 +334,10 @@ switchport mode access
 switchport access vlan 40
 exit
 ```
+```
+spanning-tree vlan 10 root secundary
+spanning-tree vlan 20 root primary
+```
 ### SWPDL3
 ```
 int range f0/1-3
@@ -346,6 +354,10 @@ exit
 int f0/6
 switchport voice vlan 50
 exit
+```
+```
+spanning-tree vlan 30 root secundary
+spanning-tree vlan 40 root primary
 ```
 ### SWPDL5
 ```
@@ -376,6 +388,10 @@ channel-protocol lacp
 channel-group 1 mode active
 exit
 ```
+```
+spanning-tree vlan 50 root secundary
+spanning-tree vlan 10 root primary
+```
 ### SWPDL4
 ```
 int range f0/1-3
@@ -394,4 +410,8 @@ switchport mode trunk
 channel-protocol lacp
 channel-group 1 mode active
 exit
+```
+```
+spanning-tree vlan 40 root secundary
+spanning-tree vlan 50 root primary
 ```
