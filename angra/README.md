@@ -120,33 +120,143 @@ passive-interface f0/1
 * IP Configuration
 * Static
 
-| Box  | IP |
+| Camp  | Value |
 | ------------- | ------------- |
 | IPv4 Address | `172.18.17.254` |
 | Subnet Mask | `255.255.255.0` |
 | Default Gateway | `172.18.17.1` |
 | DNS Server | `172.18.17.254` |
-```
 
+### SWANGRA
+```
+vlan 10
+name data
+exit
+vlan 50
+name voip
+exit
 ```
 ```
+int f0/1
+switchport mode trunk
+exit
+```
+```
+int f0/2
+switchport mode access
+switchport access vlan 10
+exit
+```
+```
+int f0/3
+switchport voice vlan 50
+exit
+```
+## DHCP
+### ANGRA1
+```
+ip dhcp pool vlan10
+network 172.17.17.0 255.255.255.0
+default-router 172.17.17.1
+option 150 ip 192.168.17.13
+dns-server 172.18.17.254
+exit
 
+ip dhcp pool vlan50
+network 172.20.17.0 255.255.255.0
+default-router 172.20.17.1
+option 150 ip 192.168.17.13
+dns-server 172.18.17.254
+exit
 ```
 ```
+telephony-service
+max-ephones 5
+max-dn 5
+ip source-address 192.168.17.13 port 2000
+auto assign 1 to 5
+exit
+```
+```
+ephone-dn 1
+number 201
+exit
+ephone-dn 2
+number 202
+exit
+ephone-dn 3
+number 203
+exit
+ephone-dn 4
+number 204
+exit
+ephone-dn 5
+number 205
+exit
+```
+## Wireless
+### Server-PT
+* Services
+* AAA
 
-```
-```
+* Service `On`
 
-```
-```
+* Network configuration
 
-```
-```
+| Camp | Value |
+| ------------- | ------------- |
+| Client Name | `WiFi` |
+| Client IP | `172.16.17.2` |
+| Secret | `Passw0rd` |
+| ServerType | `Radius` |
 
-```
-```
+* User Setup
 
-```
+| Camp | Value |
+| ------------- | ------------- |
+| Username | `maria` |
+| Password | `Passw0rd` |
+
+### Wireless Router0
+
+* GUI
+* Setup
+* Basic Setup
+* Internet Connection type `Static IP`
+
+| Camp | V1 | V2 | V3 | V4 |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| Internet IP Address | `172` | `16` | `17` | `2` |
+| Subnet Mask | `255` | `255` | `255` | `0` |
+| Default Gateway | `172` | `16` | `17` | `1` |
+| DNS 1 | `172` | `18` | `17` | `254` |
+
+Save Settings
+
+* Network Setup
+
+* Ip Address: `172` `19` `17` `1`
+* Subnet Mask: `255.255.255.0`
+
+Save Settings
+
+* DHCP Server: `Enable`
+* Start IP Address: `100`
+* Maximum number of Users: `100`
+* Static DNS1: `172` `18` `17` `254`
+
+Save Settings
+
+* Wireless
+* Basic Wireless Settings
+* Network Name (SSID): `Angra`
+
+Save Settings
+
+* Wireless Security
+* Security Mode: `WPA2 Enterprise`
+* RADIUS Server: `172` `18` `17` `254`
+* Shared Secret: `Passw0rd`
 ```
 
 ```
