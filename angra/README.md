@@ -18,7 +18,8 @@ router eigrp 100
 network 192.168.17.8 0.0.0.3
 no auto-summary
 passive-interface s0/0/0
-redistribute rip 100 metric 3 1 255 255 10
+redistribute static
+redistribute rip metric 3 1 255 255 10
 exit
 ```
 ```
