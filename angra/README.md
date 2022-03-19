@@ -234,7 +234,6 @@ exit
 Save Settings
 
 * Network Setup
-
 * Ip Address: `172` `19` `17` `1`
 * Subnet Mask: `255.255.255.0`
 
