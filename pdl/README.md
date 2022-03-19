@@ -415,3 +415,79 @@ exit
 spanning-tree vlan 40 root secondary
 spanning-tree vlan 50 root primary
 ```
+
+## HRSP
+### PDL2
+```
+int f0/0
+standby version 2
+standby 40 ip 10.17.40.253
+standby 40 priority 105
+standby 40 preempt
+exit
+```
+```
+int f0/1.10
+standby 10 ip 10.17.10.253
+standby 10 priority 105
+standby 10 preempt
+exit
+```
+```
+int f0/1.20
+standby 20 ip 10.17.20.253
+standby 20 priority 105
+standby 20 preempt
+exit
+```
+```
+int f0/1.30
+standby 30 ip 10.17.30.253
+standby 30 priority 105
+standby 30 preempt
+exit
+```
+```
+int f0/1.50
+standby 50 ip 10.17.50.253
+standby 50 priority 105
+standby 50 preempt
+exit
+```
+### PDL1
+```
+int f0/0
+standby version 2
+standby 40 ip 10.17.40.253
+standby 40 priority 100
+standby 40 preempt
+exit
+```
+```
+int f0/1.10
+standby 10 ip 10.17.10.253
+standby 10 priority 100
+standby 10 preempt
+exit
+```
+```
+int f0/1.20
+standby 20 ip 10.17.20.253
+standby 20 priority 100
+standby 20 preempt
+exit
+```
+```
+int f0/1.30
+standby 30 ip 10.17.30.253
+standby 30 priority 100
+standby 30 preempt
+exit
+```
+```
+int f0/1.50
+standby 50 ip 10.17.50.253
+standby 50 priority 100
+standby 50 preempt
+exit
+```
