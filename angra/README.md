@@ -43,6 +43,9 @@ ip nat inside source list 1 interface s0/0/0 overload
 ip nat inside source static tcp 172.18.17.254 80 1.0.0.6 80
 ip nat inside source static tcp 172.18.17.254 443 1.0.0.6 443
 ```
+```
+do write
+```
 ### Router Angra1
 ```
 int s0/0/0
@@ -69,6 +72,9 @@ network 192.168.17.12 0.0.0.3
 network 172.16.17.0 0.0.0.255
 no auto-summary
 passive-interface f0/0
+```
+```
+do write
 ```
 ### Router Angra2
 ```
@@ -115,7 +121,9 @@ passive-interface f0/0.10
 passive-interface f0/0.50
 passive-interface f0/1
 ```
- 
+```
+do write
+``` 
 ### Server-PT
 * IP Configuration
 * Static
