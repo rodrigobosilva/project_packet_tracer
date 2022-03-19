@@ -34,10 +34,9 @@ ip route 10.17.40.0 255.255.255.0 10.255.255.1
 ip route 10.17.50.0 255.255.255.0 10.255.255.1
 ```
 ```
-access-list 1 permit 172.16.17.0 0.0.0.255 
-access-list 1 permit 172.17.17.0 0.0.0.255
-access-list 1 permit 172.18.17.0 0.0.0.255
-access-list 1 permit 172.20.17.0 0.0.0.255
+access-list 1 permit 10.0.0.0 0.255.255.255 
+access-list 1 permit 172.16.0.0 0.15.255.255
+access-list 1 permit 192.168.0.0 0.0.255.255
 ```
 ```
 ip nat inside source list 1 interface s0/0/0 overload
