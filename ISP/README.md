@@ -12,6 +12,12 @@ ip address 1.0.0.5 255.255.255.252
 exit
 ```
 ```
+int s0/1/0
+no shutdown
+ip address 1.0.0.9 255.255.255.252
+exit
+```
+```
 int f0/0
 no shutdown
 ip address 8.8.8.1 255.255.255.0
