@@ -243,3 +243,155 @@ ip nat inside source list 1 interface s0/0/0 overload
 ```
 do write
 ```
+### Server-PT HTTPS
+* IP Configuration
+* Static
+
+| Camp  | Value |
+| ------------- | ------------- |
+| IPv4 Address | `10.168.17.254` |
+| Subnet Mask | `255.255.255.0` |
+| Default Gateway | `10.168.17.1` |
+| DNS Server | `10.168.17.254` |
+
+### Server-PT V40 HTTP
+* IP Configuration
+* Static
+
+| Camp  | Value |
+| ------------- | ------------- |
+| IPv4 Address | `10.17.40.254` |
+| Subnet Mask | `255.255.255.0` |
+| Default Gateway | `10.17.40.253` |
+| DNS Server | `10.168.17.254` |
+
+## VLANS
+### SWPDL2 & SWPDL3
+```
+vtp mode server
+vtp domain pdl.pt
+vtp password Passw0rd
+```
+### SWPDL1, SWPDL4 & SWPDL5
+```
+vtp mode client
+vtp domain pdl.pt
+vtp password Passw0rd
+```
+### SWPDL2
+```
+vlan 10
+name grsi
+exit
+vlan 20
+name tgri
+exit
+vlan 30
+name tqa
+exit
+vlan 40
+name servers
+exit
+vlan 50
+name voip
+exit
+```
+```
+int range f0/1-3
+switchport mode trunk
+exit
+int f0/4
+switchport mode access
+switchport access vlan 10
+exit
+int f0/5
+switchport mode access
+switchport access vlan 20
+exit
+int f0/6
+switchport mode access
+switchport access vlan 30
+exit
+```
+### SWPDL1
+```
+int range f0/1-3
+switchport mode trunk
+exit
+int f0/4
+switchport mode trunk
+switchport trunk allowed vlan 10
+switchport trunk allowed vlan add 20
+switchport trunk allowed vlan add 30
+switchport trunk allowed vlan add 50
+exit
+int f0/5
+switchport mode access
+switchport access vlan 40
+exit
+```
+### SWPDL3
+```
+int range f0/1-3
+switchport mode trunk
+exit
+int f0/4
+switchport mode access
+switchport access vlan 10
+exit
+int f0/5
+switchport mode access
+switchport access vlan 20
+exit
+int f0/6
+switchport voice vlan 50
+exit
+```
+### SWPDL5
+```
+int f0/1
+switchport mode trunk
+switchport trunk allowed vlan 10
+switchport trunk allowed vlan add 20
+switchport trunk allowed vlan add 30
+switchport trunk allowed vlan add 50
+exit
+int f0/4
+switchport mode access
+switchport access vlan 40
+exit
+int f0/5
+switchport mode access
+switchport access vlan 40
+exit
+int f0/8
+switchport voice vlan 50
+int range f0/2-3
+switchport mode trunk
+channel-protocol lacp
+channel-group 1 mode active
+int range f0/6-7
+switchport mode trunk
+channel-protocol lacp
+channel-group 1 mode active
+exit
+```
+### SWPDL4
+```
+int range f0/1-3
+switchport mode trunk
+exit
+int f0/4
+switchport mode access
+switchport access vlan 20
+exit
+int f0/5
+switchport mode access
+switchport access vlan 30
+exit
+int range f0/6-9
+switchport mode trunk
+channel-protocol lacp
+channel-group 1 mode active
+exit
+```
