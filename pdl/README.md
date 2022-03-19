@@ -491,3 +491,78 @@ standby 50 priority 100
 standby 50 preempt
 exit
 ```
+## DHCP
+### PDL1
+```
+ip dhcp excluded-address 10.17.10.1 10.17.10.2
+ip dhcp excluded-address 10.17.10.253 10.17.10.254
+ip dhcp excluded-address 10.17.20.1 10.17.20.2
+ip dhcp excluded-address 10.17.20.253 10.17.20.254
+ip dhcp excluded-address 10.17.30.1 10.17.30.2
+ip dhcp excluded-address 10.17.30.253 10.17.30.254
+ip dhcp excluded-address 10.17.50.1 10.17.50.2
+ip dhcp excluded-address 10.17.50.253 10.17.50.254
+```
+```
+ip dhcp pool vlan10
+network 10.17.10.0 255.255.255.0
+default-router 10.17.10.253
+option 150 ip 192.168.17.22
+dns-server 10.168.17.254
+exit
+ip dhcp pool vlan20
+network 10.17.20.0 255.255.255.0
+default-router 10.17.20.253
+option 150 ip 192.168.17.22
+dns-server 10.168.17.254
+exit
+ip dhcp pool vlan30
+network 10.17.30.0 255.255.255.0
+default-router 10.17.30.253
+option 150 ip 192.168.17.22
+dns-server 10.168.17.254
+exit
+ip dhcp pool vlan50
+network 10.17.50.0 255.255.255.0
+default-router 10.17.50.253
+option 150 ip 192.168.17.22
+dns-server 10.168.17.254
+exit
+```
+```
+telephony-service
+max-ephones 10
+max-dn 10
+ip source-address 192.168.17.22 port 2000
+auto assign 1 to 10
+exit
+```
+```
+ephone-dn 1
+number 101
+exit
+ephone-dn 2
+number 102
+exit
+ephone-dn 3
+number 111
+exit
+ephone-dn 4
+number 112
+exit
+ephone-dn 5
+number 121
+exit
+ephone-dn 6
+number 122
+exit
+ephone-dn 7
+number 123
+exit
+ephone-dn 8
+number 131
+exit
+ephone-dn 9
+number 132
+exit
+```
