@@ -42,12 +42,9 @@ exit
 ip route 0.0.0.0 0.0.0.0 s0/0/0
 ```
 ```
-access-list 1 permit 10.168.17.0 0.0.0.255 
-access-list 1 permit 10.17.10.0 0.0.0.255
-access-list 1 permit 10.17.20.0 0.0.0.255
-access-list 1 permit 10.17.30.0 0.0.0.255
-access-list 1 permit 10.17.40.0 0.0.0.255
-access-list 1 permit 10.17.50.0 0.0.0.255
+access-list 1 permit 10.0.0.0 0.255.255.255 
+access-list 1 permit 172.16.0.0 0.15.255.255
+access-list 1 permit 192.168.0.0 0.0.255.255
 ```
 ```
 ip nat inside source list 1 interface s0/0/0 overload
