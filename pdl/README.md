@@ -23,7 +23,7 @@ exit
 ```
 int f0/0
 no shutdown
-ip address 10.168.17.1 255.255.255.252
+ip address 10.168.17.1 255.255.255.0
 ip nat inside
 exit
 ```
@@ -51,8 +51,8 @@ access-list 1 permit 10.17.50.0 0.0.0.255
 ```
 ```
 ip nat inside source list 1 interface s0/0/0 overload
-ip nat inside source static tcp 10.17.40.254 80 1.0.0.6 80
-ip nat inside source static tcp 10.168.17.254 443 1.0.0.6 443
+ip nat inside source static tcp 10.17.40.254 80 1.0.0.2 80
+ip nat inside source static tcp 10.168.17.254 443 1.0.0.2 443
 ```
 ```
 do write
