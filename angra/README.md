@@ -164,6 +164,10 @@ exit
 ## DHCP
 ### ANGRA1
 ```
+ip dhcp excluded-address 172.17.17.1
+ip dhcp excluded-address 172.20.17.1
+```
+```
 ip dhcp pool vlan10
 network 172.17.17.0 255.255.255.0
 default-router 172.17.17.1
