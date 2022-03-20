@@ -421,6 +421,7 @@ standby version 2
 standby 40 ip 10.17.40.253
 standby 40 priority 105
 standby 40 preempt
+standby 40 track s0/0/0
 exit
 ```
 ```
@@ -428,6 +429,7 @@ int f0/1.10
 standby 10 ip 10.17.10.253
 standby 10 priority 105
 standby 10 preempt
+standby 10 track s0/0/0
 exit
 ```
 ```
@@ -435,6 +437,7 @@ int f0/1.20
 standby 20 ip 10.17.20.253
 standby 20 priority 105
 standby 20 preempt
+standby 20 track s0/0/0
 exit
 ```
 ```
@@ -442,6 +445,7 @@ int f0/1.30
 standby 30 ip 10.17.30.253
 standby 30 priority 105
 standby 30 preempt
+standby 30 track s0/0/0
 exit
 ```
 ```
@@ -449,6 +453,7 @@ int f0/1.50
 standby 50 ip 10.17.50.253
 standby 50 priority 105
 standby 50 preempt
+standby 50 track s0/0/0
 exit
 ```
 ### PDL1
@@ -458,6 +463,8 @@ standby version 2
 standby 40 ip 10.17.40.253
 standby 40 priority 100
 standby 40 preempt
+standby 40 track s0/0/1
+standby 40 track s0/1/0
 exit
 ```
 ```
@@ -465,6 +472,8 @@ int f0/1.10
 standby 10 ip 10.17.10.253
 standby 10 priority 100
 standby 10 preempt
+standby 10 track s0/0/1
+standby 10 track s0/1/0
 exit
 ```
 ```
@@ -472,6 +481,8 @@ int f0/1.20
 standby 20 ip 10.17.20.253
 standby 20 priority 100
 standby 20 preempt
+standby 20 track s0/0/1
+standby 20 track s0/1/0
 exit
 ```
 ```
@@ -479,6 +490,8 @@ int f0/1.30
 standby 30 ip 10.17.30.253
 standby 30 priority 100
 standby 30 preempt
+standby 30 track s0/0/1
+standby 30 track s0/1/0
 exit
 ```
 ```
@@ -486,6 +499,8 @@ int f0/1.50
 standby 50 ip 10.17.50.253
 standby 50 priority 100
 standby 50 preempt
+standby 50 track s0/0/1
+standby 50 track s0/1/0
 exit
 ```
 ## DHCP
